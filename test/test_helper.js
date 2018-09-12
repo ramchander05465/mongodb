@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
-//import mongoose from 'mongoose'
+
+mongoose.Promise = global.Promise
 
 mongoose.connect('mongodb://localhost/MongodbPOC');
 mongoose.connection
@@ -7,3 +8,9 @@ mongoose.connection
     .on('error', (error) => {
         console.warn('warning', error)
     })
+
+beforeEach((done) => {
+    mongoose.connection.collections.logins.drop(()=>{
+        done()
+    })
+})
