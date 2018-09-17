@@ -11,8 +11,11 @@ before((done)=>{
 })
 
 
-beforeEach((done) => {
+/*beforeEach((done) => {
     mongoose.connection.collections.logins.drop(()=>{
         done()
     })
-})
+    mongoose.connection.collections.users.drop(()=>{
+        done()
+    })
+})*/
