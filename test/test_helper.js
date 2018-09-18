@@ -9,13 +9,3 @@ before((done)=>{
         console.warn('warning', error)
     })
 })
-
-
-/*beforeEach((done) => {
-    mongoose.connection.collections.logins.drop(()=>{
-        done()
-    })
-    mongoose.connection.collections.users.drop(()=>{
-        done()
-    })
-})*/

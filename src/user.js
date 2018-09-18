@@ -9,7 +9,8 @@ const UserSchema = new Schema({
             message:'Name must be longer than 12 charactors'
         },
         required:[true, 'First name is required']
-    }
+    },
+    posts:[]
 })
 
 const UserModel = mongoose.model('user', UserSchema);
