@@ -5,10 +5,10 @@ const UserSchema = new Schema({
     firstName:{
         type:String,
         validate:{
-            validator: (name)=> name.length > 2,
-            message:'Name must be longer than 12 charactors'
+            validator: (name)=> name.length > 5,
+            message:'Name must be longer than 5 charactors'
         },
-        required:[true, 'First name is required']
+        required:[true, 'First name must be 5 char']
     }
 })
 
