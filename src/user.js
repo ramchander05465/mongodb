@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+const PostSchema = require('./post');
+
 const UserSchema = new Schema({
     firstName:{
         type:String,
@@ -10,7 +12,7 @@ const UserSchema = new Schema({
         },
         required:[true, 'First name is required']
     },
-    posts:[]
+    posts:[PostSchema]
 })
 
 const UserModel = mongoose.model('user', UserSchema);

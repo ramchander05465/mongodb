@@ -17,7 +17,20 @@ describe('Inserting Sub Documents', () => {
             })
     })
 
+    it('Remove sub document', (done)=> {
+        const user = new UserModel({firstName:'Raju', posts:[{title:'Teacher'}]})
+        user.save()
+            .then(() => UserModel.findOne({firstName:'Raju'}))
+            .then((result)=> {
+                const post = result.posts[0];
+                post.remove()
+                return result.save()
+            })
+            .then(()=> done())
+    })
+
+
     after('Cleaning user document', ()=>{
-        UserModel.remove({}).then((res)=> console.log('remove status', res));
+       // UserModel.remove({}).then((res)=> console.log('remove status', res));
     })
 })
