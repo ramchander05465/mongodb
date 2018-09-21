@@ -52,5 +52,5 @@ describe('Collection association', () => {
                 console.log(user.blogPosts[0].comments[0]);
                 done();
             })
-    })
+    });    
 })
